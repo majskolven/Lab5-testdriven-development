@@ -14,6 +14,14 @@ public class Test {
 	@org.junit.Test
 	public void testFrameScore() {
 		Frame testFrame = new Frame(2,4);
-		assertEquals(6,testFrame.getScore();
+		assertEquals(6,testFrame.getScore());
 	}
+	
+	@org.junit.Test
+	public void testGame() {
+		Game testGame = new Game();
+		assertEquals(10,testGame.frameList.size());
+	}
+	
+	
 }
