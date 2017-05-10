@@ -31,5 +31,9 @@ public class Frame {
 	public void setThrow2(int throw2) {
 		this.throw2 = throw2;
 	}
+	
+	public int getScore(){
+		return this.throw1 + this.throw2;
+	}
 
 }
