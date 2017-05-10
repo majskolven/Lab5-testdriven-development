@@ -39,7 +39,7 @@ public class Test {
 		testFrameList.add(new Frame(8,1));
 		testFrameList.add(new Frame(2,6));
 		Game testGame = new Game(testFrameList);
-		assertEquals(81,testGame.getScore());
+		assertEquals(81,testGame.getTotalScore());
 	}
 	
 	

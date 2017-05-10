@@ -14,4 +14,21 @@ public class Game {
 			this.frameList.add(new Frame());
 		}
 	}
+	
+	public Game(ArrayList<Frame> frameList)
+	{
+		this.frameList = frameList;
+	}
+	
+	public int getTotalScore()
+	{
+		int score = 0;
+		
+		for(int i = 0; i < this.frameList.size(); i++)
+		{
+			score += this.frameList.get(i).getScore();
+		}
+		
+		return score;
+	}
 }
