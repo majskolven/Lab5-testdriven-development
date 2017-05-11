@@ -3,6 +3,7 @@ package lab5new;
 public class Frame {
 	private int throw1;
 	private int throw2;
+	private int bonusThrow;
 	private boolean strike;
 	private boolean spare;
 	
@@ -10,6 +11,7 @@ public class Frame {
 	{
 		this.setThrow1(0);
 		this.setThrow2(0);
+		this.setBonusThrow(0);
 		this.strike = false;
 	}
 	
@@ -17,6 +19,7 @@ public class Frame {
 	{
 		this.setThrow1(throw1);
 		this.setThrow2(throw2);
+		this.setBonusThrow(0);
 		if (throw1 == 10)
 			this.strike = true;
 		else
@@ -24,6 +27,28 @@ public class Frame {
 			this.strike = false;
 			if (throw1 + throw2 == 10)
 				this.spare = true;
+			else
+				this.spare = false;
+		}
+	}
+	
+	public Frame(int throw1, int throw2, int bonusThrow)
+	{
+		this.setThrow1(throw1);
+		this.setThrow2(throw2);
+		if (throw1 == 10)
+		{
+			this.strike = true;
+			this.setBonusThrow(bonusThrow);
+		}
+		else
+		{
+			this.strike = false;
+			if (throw1 + throw2 == 10)
+			{
+				this.spare = true;
+				this.setBonusThrow(bonusThrow);
+			}
 			else
 				this.spare = false;
 		}
@@ -65,5 +90,13 @@ public class Frame {
 	
 	public boolean isSpare() {
 		return this.spare;
+	}
+
+	public int getBonusThrow() {
+		return bonusThrow;
+	}
+
+	public void setBonusThrow(int bonusThrow) {
+		this.bonusThrow = bonusThrow;
 	}
 }

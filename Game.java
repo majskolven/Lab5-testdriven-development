@@ -24,7 +24,7 @@ public class Game {
 	{
 		int score = 0;
 		
-		for(int i = 0; i < this.frameList.size(); i++)
+		for(int i = 0; i < this.frameList.size() - 1; i++)
 		{
 			if(this.frameList.get(i).isStrike())
 				if(this.frameList.get(i+1).isStrike())
@@ -37,6 +37,8 @@ public class Game {
 				else
 					score += this.frameList.get(i).getScore();
 		}
+		
+		score += this.frameList.get(this.frameList.size() - 1).getScore() + this.frameList.get(this.frameList.size() - 1).getBonusThrow();
 		return score;
 	}
 }
