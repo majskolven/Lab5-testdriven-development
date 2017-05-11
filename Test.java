@@ -192,6 +192,6 @@ public class Test {
 		testFrameList.add(new Frame(10,0));
 		testFrameList.add(new Frame(10,10,10));
 		Game testGame = new Game(testFrameList);
-		assertEquals(93,testGame.getTotalScore());
+		assertEquals(300,testGame.getTotalScore());
 	}
 }

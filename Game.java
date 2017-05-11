@@ -28,7 +28,10 @@ public class Game {
 		{
 			if(this.frameList.get(i).isStrike())
 				if(this.frameList.get(i+1).isStrike())
-					score += this.frameList.get(i).getScore() + this.frameList.get(i+1).getScore() + this.frameList.get(i+2).getThrow1();
+					if(i != this.frameList.size() - 2)
+						score += this.frameList.get(i).getScore() + this.frameList.get(i+1).getScore() + this.frameList.get(i+2).getThrow1();
+					else
+						score += this.frameList.get(i).getScore() + this.frameList.get(i+1).getScore();
 				else
 					score += this.frameList.get(i).getScore() + this.frameList.get(i+1).getScore();
 			else
