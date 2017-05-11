@@ -143,4 +143,21 @@ public class Test {
 		Game testGame = new Game(testFrameList);
 		assertEquals(90,testGame.getTotalScore());
 	}
+	
+	@org.junit.Test
+	public void testLastFrameStrike() {
+		ArrayList<Frame> testFrameList = new ArrayList<Frame>();
+		testFrameList.add(new Frame(1,5));
+		testFrameList.add(new Frame(3,6));
+		testFrameList.add(new Frame(7,2));
+		testFrameList.add(new Frame(3,6));
+		testFrameList.add(new Frame(4,4));
+		testFrameList.add(new Frame(5,3));
+		testFrameList.add(new Frame(3,3));
+		testFrameList.add(new Frame(4,5));
+		testFrameList.add(new Frame(8,1));
+		testFrameList.add(new Frame(10,7,2));
+		Game testGame = new Game(testFrameList);
+		assertEquals(92,testGame.getTotalScore());
+	}
 }
