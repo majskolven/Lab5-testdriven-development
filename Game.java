@@ -29,7 +29,10 @@ public class Game {
 			if(this.frameList.get(i).isStrike())
 				score += this.frameList.get(i).getScore() + this.frameList.get(i+1).getScore();
 			else
-				score += this.frameList.get(i).getScore();
+				if(this.frameList.get(i).isSpare())
+					score += this.frameList.get(i).getScore() + this.frameList.get(i+1).getThrow1();
+				else
+					score += this.frameList.get(i).getScore();
 		}
 		return score;
 	}

@@ -4,6 +4,7 @@ public class Frame {
 	private int throw1;
 	private int throw2;
 	private boolean strike;
+	private boolean spare;
 	
 	public Frame()
 	{
@@ -19,7 +20,13 @@ public class Frame {
 		if (throw1 == 10)
 			this.strike = true;
 		else
+		{
 			this.strike = false;
+			if (throw1 + throw2 == 10)
+				this.spare = true;
+			else
+				this.spare = false;
+		}
 	}
 
 	public int getThrow1() {
@@ -41,6 +48,11 @@ public class Frame {
 
 	public void setThrow2(int throw2) {
 		this.throw2 = throw2;
+		
+		if (this.throw1 + throw2 == 10)
+			this.spare = true;
+		else
+			this.spare = false;
 	}
 	
 	public int getScore(){
@@ -48,6 +60,10 @@ public class Frame {
 	}
 
 	public boolean isStrike() {
-		return strike;
+		return this.strike;
+	}
+	
+	public boolean isSpare() {
+		return this.spare;
 	}
 }
