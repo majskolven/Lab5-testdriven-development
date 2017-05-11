@@ -26,9 +26,11 @@ public class Game {
 		
 		for(int i = 0; i < this.frameList.size(); i++)
 		{
-			score += this.frameList.get(i).getScore();
+			if(this.frameList.get(i).isStrike())
+				score += this.frameList.get(i).getScore() + this.frameList.get(i+1).getScore();
+			else
+				score += this.frameList.get(i).getScore();
 		}
-		
 		return score;
 	}
 }
