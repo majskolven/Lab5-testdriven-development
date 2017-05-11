@@ -92,4 +92,21 @@ public class Test {
 		Game testGame = new Game(testFrameList);
 		assertEquals(103,testGame.getTotalScore());
 	}
+	
+	@org.junit.Test
+	public void testMultipleStrikes() {
+		ArrayList<Frame> testFrameList = new ArrayList<Frame>();
+		testFrameList.add(new Frame(10,0));
+		testFrameList.add(new Frame(10,0));
+		testFrameList.add(new Frame(7,2));
+		testFrameList.add(new Frame(3,6));
+		testFrameList.add(new Frame(4,4));
+		testFrameList.add(new Frame(5,3));
+		testFrameList.add(new Frame(3,3));
+		testFrameList.add(new Frame(4,5));
+		testFrameList.add(new Frame(8,1));
+		testFrameList.add(new Frame(2,6));
+		Game testGame = new Game(testFrameList);
+		assertEquals(112,testGame.getTotalScore());
+	}
 }
