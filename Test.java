@@ -177,4 +177,21 @@ public class Test {
 		Game testGame = new Game(testFrameList);
 		assertEquals(93,testGame.getTotalScore());
 	}
+	
+	@org.junit.Test
+	public void testPerfectGame() {
+		ArrayList<Frame> testFrameList = new ArrayList<Frame>();
+		testFrameList.add(new Frame(10,0));
+		testFrameList.add(new Frame(10,0));
+		testFrameList.add(new Frame(10,0));
+		testFrameList.add(new Frame(10,0));
+		testFrameList.add(new Frame(10,0));
+		testFrameList.add(new Frame(10,0));
+		testFrameList.add(new Frame(10,0));
+		testFrameList.add(new Frame(10,0));
+		testFrameList.add(new Frame(10,0));
+		testFrameList.add(new Frame(10,10,10));
+		Game testGame = new Game(testFrameList);
+		assertEquals(93,testGame.getTotalScore());
+	}
 }
